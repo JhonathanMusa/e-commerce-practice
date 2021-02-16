@@ -77,31 +77,31 @@ export default function ProductScreen(props) {
                       </div>
                     </div>
                   </li>
-                  <li>
-                    {product.countInStock > 0 && (
-                      <>
-                        <li>
-                          <div className="row">
-                            <div>Qty</div>
-                            <div>
-                              <select
-                                value={qty}
-                                onChange={(e) => setQty(e.target.value)}
-                              >
-                                {[...Array(product.countInStock).keys()].map(
-                                  (x) => (
-                                    <option key={x + 1} value={x + 1}>
-                                      {x + 1}
-                                    </option>
-                                  )
-                                )}
-                              </select>
-                            </div>
+
+                  {product.countInStock > 0 && (
+                    <>
+                      <li>
+                        <div className="row">
+                          <div>Qty</div>
+                          <div>
+                            <select
+                              value={qty}
+                              onChange={(e) => setQty(e.target.value)}
+                            >
+                              {[...Array(product.countInStock).keys()].map(
+                                (x) => (
+                                  <option key={x + 1} value={x + 1}>
+                                    {x + 1}
+                                  </option>
+                                )
+                              )}
+                            </select>
                           </div>
-                        </li>
-                      </>
-                    )}
-                  </li>
+                        </div>
+                      </li>
+                    </>
+                  )}
+
                   <li>
                     <button onClick={addToCarHandler} className="primary block">
                       Add To Car

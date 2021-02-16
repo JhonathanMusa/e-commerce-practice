@@ -6,12 +6,14 @@ export const addToCar = (productId, qty) => async (dispatch, getState) => {
   dispatch({
     type: CAR_ADD_ITEM,
     payload: {
-      name: data.name,
+      brand: data.brand,
       image: data.image,
-      price: data.prince,
+      price: data.price,
       countInStock: data.countInStock,
       product: data._id,
       qty,
     },
   });
+  // to add products to localstorage
+  localStorage.setItem("carItems", JSON.stringify(getState().car.carItems));
 };
