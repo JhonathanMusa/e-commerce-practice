@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { detailsProduct } from "../actions/productActions";
@@ -9,12 +9,17 @@ import Rating from "../components/Rating";
 export default function ProductScreen(props) {
   const dispatch = useDispatch();
   const productId = props.match.params.id;
+  const [qty, setQty] = useState(1);
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
 
   useEffect(() => {
     dispatch(detailsProduct(productId));
   }, [dispatch, productId]);
+
+  const addToCarHandler = () => {
+    props.history.push(`/car/${productId}?qty=${qty}`);
+  };
 
   return (
     <div>
@@ -73,7 +78,34 @@ export default function ProductScreen(props) {
                     </div>
                   </li>
                   <li>
-                    <button className="primary block">Add To Car</button>
+                    {product.countInStock > 0 && (
+                      <>
+                        <li>
+                          <div className="row">
+                            <div>Qty</div>
+                            <div>
+                              <select
+                                value={qty}
+                                onChange={(e) => setQty(e.target.value)}
+                              >
+                                {[...Array(product.countInStock).keys()].map(
+                                  (x) => (
+                                    <option key={x + 1} value={x + 1}>
+                                      {x + 1}
+                                    </option>
+                                  )
+                                )}
+                              </select>
+                            </div>
+                          </div>
+                        </li>
+                      </>
+                    )}
+                  </li>
+                  <li>
+                    <button onClick={addToCarHandler} className="primary block">
+                      Add To Car
+                    </button>
                   </li>
                 </ul>
               </div>

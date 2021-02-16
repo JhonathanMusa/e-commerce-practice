@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import CarScreen from "./screens/CarScreen";
 import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
 
@@ -18,6 +19,7 @@ function App() {
           </div>
         </header>
         <main>
+          <Route path="/car/:id?" component={CarScreen}/>
           <Route path="/" exact component={HomeScreen} />
           <Route path="/product/:id" component={ProductScreen} />
         </main>
