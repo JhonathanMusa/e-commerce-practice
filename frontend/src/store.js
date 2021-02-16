@@ -1,5 +1,6 @@
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import thunk from "redux-thunk";
+import { carReducer } from "./reducers/carReducers";
 import {
   productDetailsReducer,
   productListReducer,
@@ -10,6 +11,7 @@ const initialState = {};
 const reducer = combineReducers({
   productList: productListReducer,
   productDetails: productDetailsReducer,
+  car: carReducer,
 });
 
 // to see redux inside redux devtools
