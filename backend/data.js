@@ -17,8 +17,7 @@ const data = {
   ],
   products: [
     {
-      _id: "1",
-      type: "Memory Ram",
+      type: "Memory Ram Corsair RGB Pro ",
       category: "pc components",
       image: "/images/ram1.jpg",
       capacity: "8GB",
@@ -30,8 +29,7 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "2",
-      type: "Memory Ram",
+      type: "Memory Ram PNY XLR8",
       category: "pc components",
       image: "/images/ram2.jpg",
       capacity: "8GB",
@@ -43,8 +41,7 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "3",
-      type: "Memory Ram",
+      type: "Memory Ram Corsair Vengeance",
       category: "pc components",
       image: "/images/ram3.jpg",
       capacity: "8GB",
@@ -56,8 +53,7 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "4",
-      type: "Memory Ram",
+      type: "Memory Ram HyperX Fury",
       category: "pc components",
       image: "/images/ram4.jpg",
       capacity: "8GB",
@@ -69,8 +65,7 @@ const data = {
       description: "high quality product",
     },
     {
-      _id: "5",
-      type: "Memory Ram",
+      type: "Memory Ram Xpg Spectrix",
       category: "pc components",
       image: "/images/ram5.jpg",
       capacity: "8GB",

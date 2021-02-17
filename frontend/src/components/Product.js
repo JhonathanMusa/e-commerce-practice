@@ -11,9 +11,7 @@ export default function Product(props) {
       </Link>
       <div className="card-body">
         <Link to={`/product/${product._id}`}>
-          <h2>
-            {product.type} {product.brand}
-          </h2>
+          <h2>{product.type}</h2>
         </Link>
         <Rating rating={product.rating} numReviews={product.numReviews} />
         <div className="price">${product.price}</div>
