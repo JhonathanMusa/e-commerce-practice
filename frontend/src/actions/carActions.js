@@ -1,5 +1,5 @@
 import Axios from "axios";
-import { CAR_ADD_ITEM } from "../constants/carConstants";
+import { CAR_ADD_ITEM, CAR_REMOVE_ITEM } from "../constants/carConstants";
 
 export const addToCar = (productId, qty) => async (dispatch, getState) => {
   const { data } = await Axios.get(`/api/products/${productId}`);
@@ -16,4 +16,9 @@ export const addToCar = (productId, qty) => async (dispatch, getState) => {
   });
   // to add products to localstorage
   localStorage.setItem("carItems", JSON.stringify(getState().car.carItems));
+};
+
+export const removeFromCar = (productId) => (dispatch, getState) => {
+  dispatch({ type: CAR_REMOVE_ITEM, payload: productId });
+  localStorage.setItem("carItems", JSON.stringify(getState().carItems));
 };

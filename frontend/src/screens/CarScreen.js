@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import MessageBox from "../components/MessageBox";
-import { addToCar } from "../actions/carActions";
+import { addToCar, removeFromCar } from "../actions/carActions";
 
 export default function CarScreen(props) {
   const productId = props.match.params.id;
@@ -23,6 +23,7 @@ export default function CarScreen(props) {
 
   const removeFromCarHandler = (id) => {
     // delete action
+    dispatch(removeFromCar(id));
   };
 
   const checkoutHandler = () => {
