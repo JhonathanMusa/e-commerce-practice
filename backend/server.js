@@ -6,6 +6,9 @@ import mongoose from "mongoose";
 const app = express();
 const port = process.env.PORT || 5000;
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 mongoose.connect(
   process.env.MONGODB_URL || "mongodb://localhost:27017/pcStore",
   {
