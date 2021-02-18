@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import CarScreen from "./screens/CarScreen";
 import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
+import SigninScreen from "./screens/SigninScreen";
 
 function App() {
   const car = useSelector((state) => state.car);
@@ -28,8 +29,9 @@ function App() {
         </header>
         <main>
           <Route path="/car/:id?" component={CarScreen} />
-          <Route path="/" exact component={HomeScreen} />
           <Route path="/product/:id" component={ProductScreen} />
+          <Route path="/signin" component={SigninScreen} />
+          <Route path="/" exact component={HomeScreen} />
         </main>
         <footer className="row center">All rights reserved</footer>
       </div>
