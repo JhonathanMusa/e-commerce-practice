@@ -30,7 +30,7 @@ body {
 
 header {
   grid-area: header;
-  background-color: #000000;
+  background-color: #fc6262;
 }
 
 main {
@@ -40,7 +40,7 @@ main {
 
 footer {
   grid-area: footer;
-  background-color: #000000;
+  background-color: #fc6262;
   color: #ffffff;
 }
 
@@ -97,7 +97,8 @@ button:hover {
 }
 
 button.primary {
-  background-color: #f0c040;
+  background-color: #fc6262;
+  color: #fff;
 }
 
 button.block {
