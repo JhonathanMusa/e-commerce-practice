@@ -5,8 +5,15 @@ import {
   productDetailsReducer,
   productListReducer,
 } from "./reducers/productReducers";
+import { userSigninReducer } from "./reducers/userReducers";
 
 const initialState = {
+  userSignin: {
+    userInfo: localStorage.getItem("userInfo")
+      ? JSON.parse(localStorage.getItem("userInfo"))
+      : null,
+  },
+
   car: {
     carItems: localStorage.getItem("carItems")
       ? JSON.parse(localStorage.getItem("carItems"))
@@ -18,6 +25,7 @@ const reducer = combineReducers({
   productList: productListReducer,
   productDetails: productDetailsReducer,
   car: carReducer,
+  userSignin: userSigninReducer,
 });
 
 // to see redux inside redux devtools

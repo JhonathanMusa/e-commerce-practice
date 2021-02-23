@@ -30,7 +30,7 @@ body {
 
 header {
   grid-area: header;
-  background-color: #fc6262;
+  background-color: #000;
 }
 
 main {
@@ -40,7 +40,7 @@ main {
 
 footer {
   grid-area: footer;
-  background-color: #fc6262;
+  background-color: #000;
   color: #ffffff;
 }
 
@@ -93,12 +93,18 @@ input:hover,
 select:hover,
 textarea:hover,
 button:hover {
-  border: 0.1rem #404040 solid;
+  border: 0.1rem #f34f0e solid;
 }
 
 button.primary {
-  background-color: #fc6262;
+  background-color: #f16832;
   color: #fff;
+  border: 1px solid #f16832;
+}
+
+button.primary:hover {
+  background-color: #f34f0e;
+  border: 1px solid #f34f0e;
 }
 
 button.block {
@@ -241,5 +247,28 @@ img.large {
 
 .form label {
   margin: 1rem 0;
+  display: block;
+}
+
+/* Dropdown */
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.dropdown-content {
+  position: absolute;
+  display: none;
+  right: 0;
+  min-width: 12rem;
+  padding: 1rem;
+  z-index: 1;
+  background-color: #000;
+  margin: 0;
+  margin-top: 0.4rem;
+  border-radius: 0.5rem;
+}
+
+.dropdown:hover .dropdown-content {
   display: block;
 }

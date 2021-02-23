@@ -12,7 +12,6 @@ export default function CarScreen(props) {
 
   const car = useSelector((state) => state.car);
   const { carItems } = car;
-  console.log(carItems);
   const dispatch = useDispatch();
 
   useEffect(() => {
