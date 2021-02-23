@@ -4,6 +4,7 @@ import { signout } from "./actions/userActions";
 import CarScreen from "./screens/CarScreen";
 import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
+import RegisterScreen from "./screens/RegisterScreen";
 import SigninScreen from "./screens/SigninScreen";
 
 function App() {
@@ -52,6 +53,7 @@ function App() {
         <main>
           <Route path="/car/:id?" component={CarScreen} />
           <Route path="/product/:id" component={ProductScreen} />
+          <Route path="/register" component={RegisterScreen} />
           <Route path="/signin" component={SigninScreen} />
           <Route path="/" exact component={HomeScreen} />
         </main>

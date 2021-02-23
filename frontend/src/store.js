@@ -5,7 +5,10 @@ import {
   productDetailsReducer,
   productListReducer,
 } from "./reducers/productReducers";
-import { userSigninReducer } from "./reducers/userReducers";
+import {
+  userRegisterReducer,
+  userSigninReducer,
+} from "./reducers/userReducers";
 
 const initialState = {
   userSignin: {
@@ -26,6 +29,7 @@ const reducer = combineReducers({
   productDetails: productDetailsReducer,
   car: carReducer,
   userSignin: userSigninReducer,
+  userRegister: userRegisterReducer,
 });
 
 // to see redux inside redux devtools
