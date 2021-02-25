@@ -1,4 +1,8 @@
-import { CAR_ADD_ITEM, CAR_REMOVE_ITEM } from "../constants/carConstants";
+import {
+  CAR_ADD_ITEM,
+  CAR_REMOVE_ITEM,
+  CAR_SAVE_SHOPPING_ADDRESS,
+} from "../constants/carConstants";
 
 export const carReducer = (state = { carItems: [] }, action) => {
   switch (action.type) {
@@ -21,6 +25,13 @@ export const carReducer = (state = { carItems: [] }, action) => {
         ...state,
         carItems: state.carItems.filter((x) => x.product !== action.payload),
       };
+
+    case CAR_SAVE_SHOPPING_ADDRESS:
+      return {
+        ...state,
+        shippingAddress: action.payload,
+      };
+
     default:
       return state;
   }
