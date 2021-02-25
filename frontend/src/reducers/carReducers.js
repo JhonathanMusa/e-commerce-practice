@@ -1,6 +1,7 @@
 import {
   CAR_ADD_ITEM,
   CAR_REMOVE_ITEM,
+  CAR_SAVE_PAYMENT_METHOD,
   CAR_SAVE_SHOPPING_ADDRESS,
 } from "../constants/carConstants";
 
@@ -30,6 +31,12 @@ export const carReducer = (state = { carItems: [] }, action) => {
       return {
         ...state,
         shippingAddress: action.payload,
+      };
+
+    case CAR_SAVE_PAYMENT_METHOD:
+      return {
+        ...state,
+        paymentMethod: action.payload,
       };
 
     default:

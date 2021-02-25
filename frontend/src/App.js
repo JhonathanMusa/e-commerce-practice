@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import { signout } from "./actions/userActions";
 import CarScreen from "./screens/CarScreen";
 import HomeScreen from "./screens/HomeScreen";
+import PaymentMethodScreen from "./screens/PaymentMethodScreen";
 import ProductScreen from "./screens/ProductScreen";
 import RegisterScreen from "./screens/RegisterScreen";
 import ShippingAddressScreen from "./screens/ShippingAddressScreen";
@@ -56,7 +57,8 @@ function App() {
           <Route path="/product/:id" component={ProductScreen} />
           <Route path="/register" component={RegisterScreen} />
           <Route path="/signin" component={SigninScreen} />
-          <Route path="/shipping" exact component={ShippingAddressScreen} />
+          <Route path="/shipping" component={ShippingAddressScreen} />
+          <Route path="/payment" component={PaymentMethodScreen} />
           <Route path="/" exact component={HomeScreen} />
         </main>
         <footer className="row center">All rights reserved</footer>

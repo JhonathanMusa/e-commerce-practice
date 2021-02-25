@@ -2,6 +2,7 @@ import Axios from "axios";
 import {
   CAR_ADD_ITEM,
   CAR_REMOVE_ITEM,
+  CAR_SAVE_PAYMENT_METHOD,
   CAR_SAVE_SHOPPING_ADDRESS,
 } from "../constants/carConstants";
 
@@ -31,3 +32,7 @@ export const saveShippingAddress = (data) => (dispatch) => {
   dispatch({ type: CAR_SAVE_SHOPPING_ADDRESS, payload: data });
   localStorage.setItem("shippingAddress", JSON.stringify(data));
 };
+
+export const savePaymentMethod = (data) => (dispatch) => {
+  dispatch({type: CAR_SAVE_PAYMENT_METHOD, payload: data})
+}
