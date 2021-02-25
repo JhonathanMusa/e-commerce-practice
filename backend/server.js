@@ -3,6 +3,7 @@ import userRouter from "./routers/userRouter.js";
 import productRouter from "./routers/productRouter.js";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import orderRouter from "./routers/orderRouter.js";
 
 const port = process.env.PORT || 5000;
 const app = express();
@@ -22,6 +23,7 @@ mongoose.connect(
 
 app.use("/api/users", userRouter);
 app.use("/api/products", productRouter);
+app.use("/api/orders", orderRouter);
 
 app.get("/", (req, res) => {
   res.send("Server is ready");
