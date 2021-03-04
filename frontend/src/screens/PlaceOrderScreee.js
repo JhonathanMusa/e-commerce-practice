@@ -1,7 +1,8 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import CheckoutSteps from "../components/CheckoutSteps";
+import { createOrder } from "../actions/orderActions";
 
 export default function PlaceOrderScreen(props) {
   const car = useSelector((state) => state.car);
@@ -17,8 +18,10 @@ export default function PlaceOrderScreen(props) {
   car.taxPrice = toPrice(0.15 * car.itemsPrice);
   car.totalPrice = car.itemsPrice + car.shippingPrice + car.taxPrice;
 
+  const dispatch = useDispatch();
   const placeOrderHandler = () => {
     // TODO: dispatch place order action
+    dispatch(createOrder({ ...car, orderItems: car.carItems }));
   };
 
   return (
