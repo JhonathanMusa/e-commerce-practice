@@ -10,6 +10,8 @@ import {
   userSigninReducer,
 } from "./reducers/userReducers";
 
+import { orderCreateReducer } from "./reducers/orderReducers";
+
 const initialState = {
   userSignin: {
     userInfo: localStorage.getItem("userInfo")
@@ -34,6 +36,7 @@ const reducer = combineReducers({
   car: carReducer,
   userSignin: userSigninReducer,
   userRegister: userRegisterReducer,
+  orderCreate: orderCreateReducer,
 });
 
 // to see redux inside redux devtools
