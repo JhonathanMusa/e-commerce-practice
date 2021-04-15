@@ -1,2 +1,2 @@
 # e-commerce-practice
-Building an e-commerce with MERN stack
+Building an e-commerce using MERN stack
