@@ -1,5 +1,6 @@
 import {
   CAR_ADD_ITEM,
+  CAR_EMPTY,
   CAR_REMOVE_ITEM,
   CAR_SAVE_PAYMENT_METHOD,
   CAR_SAVE_SHOPPING_ADDRESS,
@@ -38,7 +39,8 @@ export const carReducer = (state = { carItems: [] }, action) => {
         ...state,
         paymentMethod: action.payload,
       };
-
+    case CAR_EMPTY:
+      return { ...state, carItems: [] }
     default:
       return state;
   }
