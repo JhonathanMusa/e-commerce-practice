@@ -1,2 +1,2 @@
 # e-commerce-practice
-Building an e-commerce using MERN stack with JWT
+E-commerce project built with MERN stack
